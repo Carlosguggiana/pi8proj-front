@@ -14,5 +14,10 @@ export default {
   components: {
     SideBar,
   },
-};
+  computed: {
+    notLoged() {
+      return this.router.name !== 'login'
+    }
+  }
+ };
 </script>

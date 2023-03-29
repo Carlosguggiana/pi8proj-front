@@ -31,24 +31,27 @@ const PaginaLogin = () => import("./pages/PaginaLogin.vue");
 const PaginaSignin = () => import("./pages/PaginaSignin.vue");
 const NotFound = () => import("./pages/NotFound.vue");
 
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", redirect: "/inicio" },
-    { path: "/inicio", component: PaginaInicial },
-    { path: "/agenda", component: PaginaAgenda },
-    { path: "/agenda/reservar", component: PaginaAgendaReservar },
-    { path: "/materiais", component: PaginaMateriais, props: true },
-    { path: "/materiais/:id", component: PaginaMateriaisDetalhes, props: true },
-    { path: "/materiais/devolver", component: PaginaMateriaisDevolver },
-    { path: "/materiais/registrar", component: PaginaMateriaisRegistrar },
-    { path: "/relatorio", component: PaginaRelatorio },
-    { path: "/professores", component: PaginaProfessores },
-    { path: "/administradores", component: PaginaAdministradores },
-    { path: "/login", component: PaginaLogin },
-    { path: "/signin", component: PaginaSignin },
-    { path: "/:notFound(.*)", component: NotFound },
+    { path: "/inicio", name:'home', component: PaginaInicial },
+    { path: "/agenda", name:'agenda', component: PaginaAgenda },
+    { path: "/agenda/reservar", name:'reservas', component: PaginaAgendaReservar },
+    { path: "/materiais", name:'materiais', component: PaginaMateriais, props: true },
+    { path: "/materiais/:id", name:'materiais ', component: PaginaMateriaisDetalhes, props: true },
+    { path: "/materiais/devolver", name:'devolver', component: PaginaMateriaisDevolver },
+    { path: "/materiais/registrar-materiais", name:'registrarMateriais', component: PaginaMateriaisRegistrar },
+    { path: "/relatorio", name:'relatório', component: PaginaRelatorio },
+    { path: "/professores", name:'professores', component: PaginaProfessores },
+    { path: "/administradores", name:'admins', component: PaginaAdministradores },
+    { path: "/login", name:'login', component: PaginaLogin },
+    { path: "/signin", name:'singin', component: PaginaSignin },
+    { path: "/:notFound(.*)", name:'notfound', component: NotFound },
   ],
 });
+
+
 
 export default router;

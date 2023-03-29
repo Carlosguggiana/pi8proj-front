@@ -55,7 +55,7 @@
         value="professores"
         rounded="pill"
         router
-        to="/professores"
+        to="/login"
       ></v-list-item>
       <v-list-item
         prepend-icon="mdi-account-cog"
@@ -68,3 +68,5 @@
     </v-list>
   </v-navigation-drawer>
 </template>
+
+
